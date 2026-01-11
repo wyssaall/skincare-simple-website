@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
-import Product from "./prodcts.model";
 
 
 const order = new mongoose.Schema ({
-   Product : [
+   products : [
     {
         product:{
             type: mongoose.Schema.Types.ObjectId,

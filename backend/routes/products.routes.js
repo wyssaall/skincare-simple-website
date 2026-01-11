@@ -1,22 +1,22 @@
 
 import express from "express";
 import {getAllProducts, getOnceProduct, createProduct, updateProduct, deleteProduct} from "../controllers/products.contollers.js";
-const router = express.Router();
+const routerProd = express.Router();
 
 // get all products
 
-router.get('/products', getAllProducts);
+routerProd.get('/', getAllProducts);
 
 // get single product
-router.get('/products/:id',getOnceProduct);
+routerProd.get('/:id',getOnceProduct);
 
 //create a product
-router.post('/products', createProduct);
+routerProd.post('/', createProduct);
 
 //update a product
-router.put('/products/:id', updateProduct);
+routerProd.put('/:id', updateProduct);
 
 //deletes a product
-router.delete('/products/:id',deleteProduct);
+routerProd.delete('/:id',deleteProduct);
 
-export default router;
+export default routerProd;
