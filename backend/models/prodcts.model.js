@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
 
-const product = [
-    {
+const product = new mongoose.Schema ({
+
+    
         name : String,
         description : String,
         price : Number,
@@ -15,8 +16,10 @@ const product = [
             type: Number,
             default: 0
         }
-    }
-]
+    
+
+})
+    
 
 const Product = mongoose.model('Product', product);
 
