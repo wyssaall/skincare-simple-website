@@ -1,9 +1,10 @@
 import {validationResult} from "express-validator";
 import Order from "../models/orders.model.js";
+import {SUCCESS, FAIL, ERROR} from '../utils/httpStatus.js'
 
 const getAllOrders = async(req,res)=>{
  const orders = await Order.find();
- res.json(orders);
+ res.json({status:SUCCESS, data : orders});
 }
 
 
@@ -12,7 +13,7 @@ const getOneOrder= async(req,res)=>{
  if (!order){
   return  res.status(400).json({error: 'this order does not exist'})
  }
- res.status(200).json(order);
+ res.status(200).json({status:SUCCESS, data: order});
 
 }
 
@@ -23,7 +24,7 @@ const createOrder = async(req,res)=>{
  }
  let order = new Order(req.body);
  await order.save();
- res.status(201).json(order);
+ res.status(201).json({status:SUCCESS, data: order});
 
 }
 

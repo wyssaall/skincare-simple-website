@@ -1,6 +1,6 @@
 
 import express from "express";
-import {getAllProducts, getOnceProduct, createProduct, updateProduct, deleteProduct} from "../controllers/products.contollers.js";
+import {getAllProducts, getOneProduct, createProduct, updateProduct, deleteProduct} from "../controllers/products.contollers.js";
 const routerProd = express.Router();
 
 // get all products
@@ -8,7 +8,7 @@ const routerProd = express.Router();
 routerProd.get('/', getAllProducts);
 
 // get single product
-routerProd.get('/:id',getOnceProduct);
+routerProd.get('/:id',getOneProduct);
 
 //create a product
 routerProd.post('/', createProduct);
